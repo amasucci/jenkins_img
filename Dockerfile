@@ -1,5 +1,7 @@
 FROM openjdk:8-jre
-RUN groupadd jenkins && useradd -m -g jenkins jenkins && mkdir /home/jenkins/.jenkins
+RUN groupadd jenkins && useradd -m -g jenkins jenkins && mkdir /home/jenkins/.jenkins && apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /home/jenkins/
 
