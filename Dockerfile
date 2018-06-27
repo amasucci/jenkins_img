@@ -14,4 +14,6 @@ COPY entrypoint.sh /home/jenkins/entrypoint.sh
 RUN chown -R jenkins:jenkins /home/jenkins/
 USER jenkins
 
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+
 ENTRYPOINT /home/jenkins/entrypoint.sh
